@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini-Quiz: Sessions 4 & 5</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans p-4 md:p-8">
+    <div class="max-w-4xl mx-auto bg-white p-6 md:p-10 shadow-lg rounded-lg">
+        <h1 class="text-4xl font-bold mb-2 text-center text-blue-700">Mini-Quiz</h1>
+        <p class="text-center text-gray-600 mb-8 text-lg">Session 4: One Blessing (Generous Giving) & Session 5: One Task (Witnessing)</p>
+        
+        <div id="resultOverlay" class="hidden mb-8 p-6 bg-green-100 border-l-4 border-green-500 text-green-800 rounded shadow">
+            <h2 class="text-3xl font-bold mb-2">Quiz Submitted!</h2>
+            <p id="scoreDisplay" class="text-2xl font-semibold mb-2"></p>
+            <p>Your results have been automatically submitted to the instructor.</p>
+            <p class="text-sm mt-4 italic text-gray-700">Note to Instructor: If this is the first time receiving a submission, please check your inbox for an activation email from FormSubmit.co.</p>
+        </div>
+
+        <form id="quizForm" action="https://formsubmit.co/naycoeyap@gmail.com" method="POST">
+            <!-- FormSubmit Configuration -->
+            <input type="hidden" name="_subject" value="New Mini-Quiz Submission!">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="Final Score" id="finalScore" value="">
+            <input type="hidden" name="Results Details" id="resultsDetails" value="">
+
+            <!-- User Info -->
+            <div class="mb-10 p-6 bg-blue-50 rounded-lg shadow-inner">
+                <h2 class="text-2xl font-semibold mb-4 text-blue-800">Your Details</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium mb-2 text-gray-700">Full Name</label>
+                        <input type="text" name="Name" required class="w-full border border-gray-300 p-3 rounded focus:ring-blue-500 focus:border-blue-500 shadow-sm">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2 text-gray-700">Email Address</label>
+                        <input type="email" name="Email" required class="w-full border border-gray-300 p-3 rounded focus:ring-blue-500 focus:border-blue-500 shadow-sm">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Session 4 -->
+            <div class="mb-12">
+                <h2 class="text-3xl font-bold mb-6 text-gray-800 border-b-2 border-blue-200 pb-3">Session 4: One Blessing (Generous Giving)</h2>
+                <div id="session4"></div>
+            </div>
+
+            <!-- Session 5 -->
+            <div class="mb-12">
+                <h2 class="text-3xl font-bold mb-6 text-gray-800 border-b-2 border-blue-200 pb-3">Session 5: One Task (Witnessing)</h2>
+                <div id="session5"></div>
+            </div>
+            
+            <div id="submitContainer" class="mt-8 text-center border-t-2 pt-8 border-gray-100">
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-full shadow-lg hover:shadow-xl transition duration-300 text-lg">Submit Quiz</button>
+            </div>
+        </form>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
